@@ -62,7 +62,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100%;
     min-width: 32px;
     min-height: 32px;
     color: #fff;
@@ -103,18 +102,20 @@ header {
 #filter-buttons {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 10px;
     list-style: none;
 }
 
 
 .filter-btn {
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 16px 32px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 24px;
     transition: background-color 0.2s, color 0.2s;
     color: var(--color-beige);
+    background-color: transparent;
+    border: none;
 }
 
 
