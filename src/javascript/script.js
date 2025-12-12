@@ -1,6 +1,6 @@
 async function carregarCartas() {
     try {
-        const resposta = await fetch('data/cards.json');
+        const resposta = await fetch('data/card.json');
         const cartas = await resposta.json();
 
 
