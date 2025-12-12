@@ -1,6 +1,7 @@
 let listaDeCartas = [];
 const secao = document.querySelector(".content-cards");
 const campoDeEntrada = document.getElementById('input-search');
+const botoesFiltro = document.querySelectorAll('.filter-btn');
 
 async function carregarCartas() {
     try {
@@ -17,6 +18,7 @@ async function carregarCartas() {
 }
 
 function exibirCartas(lista) {
+    secao.innerHTML = "";
 
     lista.forEach(carta => {
         const div = document.createElement("div");
@@ -47,18 +49,39 @@ function pesquisarCarta() {
         carta.name.toLowerCase().includes(cartaDigitada.toLowerCase())
     );
 
+    exibirResultado(listaFiltrada);
+}
 
-    secao.innerHTML = "";
-
-    if (listaFiltrada.length === 0) {
-        const p = document.createElement('p');
-        p.textContent = "Carta não encontrada.";
-        secao.appendChild(p);
-    } else {
-        exibirCartas(listaFiltrada);
+function filtrarPorRegiao(regiao) {
+    if (regiao === "all") {
+        exibirCartas(listaDeCartas);
+        return;
     }
+
+    const listaFiltrada = listaDeCartas.filter(carta =>
+        carta.regionRef && carta.regionRef.toLowerCase() === regiao
+    );
+
+    exibirResultado(listaFiltrada);
+}
+
+function exibirResultado(lista) {
+    if (lista.length === 0) {
+        secao.innerHTML = "Nenhuma carta encontrada.";
+        return;
+    }
+
+    exibirCartas(lista);
 }
 
 campoDeEntrada.addEventListener('input', pesquisarCarta);
+
+botoesFiltro.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const regiao = btn.dataset.region;
+        filtrarPorRegiao(regiao);
+        campoDeEntrada.value = "";
+    });
+});
 
 carregarCartas();
