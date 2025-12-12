@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Cards of Runeterra</title>
+</head>
+<body>
+    <header>
+        <h1>Cards of Runeterra</h1>
+        <p>Sua enciclopédia de Cartas do LOR!</p>
+    </header>
+
+
+    <nav id="nav-bar">
+        <div id="query">
+            <div id="query-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+
+            <input
+                id="input-search"
+                type="search"
+                class="input-field"
+                placeholder="Pesquisa..."
+            >
+        </div>
+    </nav>
+
+
+    <main class="container">
+        <section id="container-sidebar">
+            <ul id="filter-buttons">
+                <li><a href="?region=all-regions" class="filter-btn">Todas as regiões</a></li>
+                <li><a href="?region=demacia" class="filter-btn">Demacia</a></li>
+                <li><a href="?region=noxus" class="filter-btn">Noxus</a></li>
+                <li><a href="?region=ionia" class="filter-btn">Ionia</a></li>
+                <li><a href="?region=piltover-zaun" class="filter-btn">Piltover & Zaun</a></li>
+                <li><a href="?region=shadow-isles" class="filter-btn">Ilhas das Sombras</a></li>
+                <li><a href="?region=shurima" class="filter-btn">Shurima</a></li>
+                <li><a href="?region=targon" class="filter-btn">Targon</a></li>
+                <li><a href="?region=bilgewater" class="filter-btn">Águas de Sentina</a></li>
+                <li><a href="?region=bandle-city" class="filter-btn">Bandópolis</a></li>
+            </ul>
+        </section>    
+
+
+        <section class="content-cards">
+        </section>
+    </main>
+   
+    <script src="src/javascript/script.js"></script>
+</body>
+</html>
